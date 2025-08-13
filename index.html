@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Penguin Runner - Winter Adventure</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Snowfall Effect -->
+<div class="snowflakes" id="snowflakes"></div>
+
+<!-- Footer -->
+<div class="footer">
+© 2025 Pixel Penguin Runner  Made by <a href="">SIMRAN YADAV</a> . All rights reserved.
+</div>
+
+<!-- Welcome Page -->
+<div class="page welcome-page" id="welcomePage">
+    <div class="winter-decor">❄️</div>
+    <div class="winter-decor">⛄</div>
+    <div class="winter-decor">🏔️</div>
+    <div class="winter-decor">❄️</div>
+        
+    <h1 class="welcome-title">PIXEL PENGUIN</h1>
+    <div class="welcome-penguin">🐧</div>
+    <h2 class="welcome-subtitle">WINTER RUNNER</h2>
+        
+    <p style="font-size: 10px; margin-bottom: 30px; color: #1e3c72; max-width: 500px;">
+    Help our brave penguin navigate through the frozen Antarctic landscape! 
+    Jump over icy obstacles and see how far you can waddle!
+    </p>
+        
+    <div class="welcome-buttons">
+        <button class="btn" onclick="showInstructions()">📖 HOW TO PLAY</button>
+        <button class="btn" onclick="startGameFromWelcome()">🎮 START GAME</button>
+    </div>
+</div>
+
+<!-- Instructions Page -->
+<div class="page instructions-page" id="instructionsPage">
+    <button class="btn btn-back" onclick="showWelcome()">⬅ BACK</button>
+        
+    <h1 class="instructions-title">HOW TO PLAY</h1>
+        
+    <div class="instructions-content">
+    <div class="instruction-section">
+    <h3>🎯 OBJECTIVE</h3>
+    <p>Help the pixel penguin run as far as possible through the Antarctic wasteland! Avoid the dangerous ice spikes and collect points to set a new high score.</p>
+    </div>
+
+    <div class="instruction-section">
+    <h3>🎮 CONTROLS</h3>
+    <div class="controls">
+    <div class="control-item">
+    <div class="control-key">SPACEBAR</div>
+    <div>Jump</div>
+    </div>
+    <div class="control-item">
+    <div class="control-key">CLICK/TAP</div>
+    <div>Jump</div>
+        </div>
+    </div>
+</div>
+
+<div class="instruction-section">
+<h3>🧊 OBSTACLES</h3>
+<p><strong>Ice Spikes (0-99 pts):</strong> Sharp crystalline spikes on the ground<br>
+<strong>Snowballs (100-199 pts):</strong> Rolling snowballs to jump over<br>
+<strong>Icicles (200-299 pts):</strong> Hanging icicles floating in the air<br>
+<strong>Ice Blocks (300-399 pts):</strong> Large frozen blocks<br>
+<strong>Frozen Fish (400+ pts):</strong> Slippery frozen fish floating around</p>
+<p>New obstacle types appear every 100 points! Each has different sizes and positions.</p>
+</div>
+
+<div class="instruction-section">
+    <h3>📊 SCORING</h3>
+    <p>• Earn 1 point every second you survive<br>
+        • Earn 10 bonus points for each obstacle you pass<br>
+        • Game speed increases over time for extra challenge<br>
+        • Your high score is automatically saved!</p>
+</div>
+
+<div class="instruction-section">
+<h3>🔊 SOUND EFFECTS</h3>
+<p>Enjoy immersive 8-bit style sound effects:<br>
+• Jump sounds when penguin leaps<br>
+• Score chimes when passing obstacles<br>
+• Level-up fanfare every 100 points<br>
+• Game over sound when you crash</p>
+</div>
+
+<div class="instruction-section">
+<h3>🌨️ WINTER FEATURES</h3>
+<p>Experience the beautiful Antarctic environment with falling snow, moving clouds, and icy terrain. New obstacle types unlock as you progress!</p>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <button class="btn" onclick="startGameFromInstructions()">🎮 START PLAYING</button>
+        </div>
+    </div>
+</div>
+
+<!-- Game Page -->
+<div class="page game-page" id="gamePage">
+    <button class="btn btn-back" onclick="showWelcome()">⬅ MENU</button>
+        
+<div class="game-container">
+<canvas id="gameCanvas" width="800" height="500"></canvas>
+            
+<div class="game-ui">
+<div class="score">SCORE: <span id="score">00000</span></div>
+<div class="high-score">HI: <span id="highScore">00000</span></div>
+</div>
+            
+<div class="game-screen start-screen" id="startScreen">
+<h1>GET READY!</h1>
+<div class="instructions-text">
+    PRESS SPACE OR CLICK TO JUMP<br>
+    AVOID THE ICE SPIKES!<br><br>
+    THE ANTARCTIC ADVENTURE AWAITS!
+</div>
+<button class="btn" onclick="startGame()">🐧 START WADDLING</button>
+</div>
+            
+<div class="game-screen game-over" id="gameOver">
+<h2>GAME OVER!</h2>
+<div id="finalScore" style="margin-bottom: 20px;"></div>
+<div id="newRecord" style="color: #FFD700; margin-bottom: 20px; display: none;">🏆 NEW HIGH SCORE! 🏆</div>
+<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+<button class="btn" onclick="restartGame()">🔄 PLAY AGAIN</button>
+<button class="btn btn-secondary" onclick="backToMenu()">📋 MENU</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+       
